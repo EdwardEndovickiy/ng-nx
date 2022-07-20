@@ -4,7 +4,13 @@
 
 This project was generated using [Nx](https://nx.dev).
 
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
+For run project:
+- `npm run start:all`
+
+For run graph:
+- `npm run nx:graph`
+
+For use different way connect with remote apps GOTO BRANCH feature/runtime-find-remotes:
 
 🔎 **Smart, Fast and Extensible Build System**
 
