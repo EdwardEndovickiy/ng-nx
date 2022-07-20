@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { loadRemoteModule } from '@nrwl/angular/mf';
 
 import { AppComponent } from './app.component';
 import { LoginGuard } from './login.guard';
@@ -24,13 +25,13 @@ enum REMOTE_URL {
           children: [
             {
               path: REMOTE_URL.PERSONS,
-              loadChildren: () => import('persons/Module').then((m) => m.RemoteEntryModule),
+              loadChildren: () => loadRemoteModule('persons', './Module').then((m) => m.RemoteEntryModule),
             }
           ]
         },
         {
           path: REMOTE_URL.LOGIN,
-          loadChildren: () => import('login/Module').then((m) => m.RemoteEntryModule),
+          loadChildren: () => loadRemoteModule('login', './Module').then((m) => m.RemoteEntryModule),
         },
       ],
       { initialNavigation: 'enabledBlocking' }
