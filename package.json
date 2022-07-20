@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "nx serve",
+    "start:all": "npx nx serve dashboard --devRemotes=login,persons",
+    "start:host-login": "npx nx serve dashboard --devRemotes=login",
+    "start:host-persons": "npx nx serve dashboard --devRemotes=persons",
+    "graph": "nx graph",
     "build": "nx build",
     "test": "nx test",
     "postinstall": "ngcc --properties es2020 browser module main"
@@ -36,6 +39,7 @@
     "@nrwl/eslint-plugin-nx": "14.4.3",
     "@nrwl/jest": "14.4.3",
     "@nrwl/linter": "14.4.3",
+    "@nrwl/storybook": "^14.4.3",
     "@nrwl/workspace": "14.4.3",
     "@types/jest": "27.4.1",
     "@types/node": "16.11.7",
