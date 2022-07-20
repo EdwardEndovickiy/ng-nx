@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root',
@@ -8,6 +9,8 @@ export class UserService {
 
   isUserLoggedIn$ = this.isUserLoggedIn.asObservable();
 
+  constructor(private router: Router) {}
+
   checkCredentials(username: string, password: string) {
     if (username === 'demo' && password === 'demo') {
       this.login();
@@ -16,6 +19,8 @@ export class UserService {
 
   private login() {
     this.isUserLoggedIn.next(true);
+
+    this.router.navigate(['/']);
   }
 
   logout() {
